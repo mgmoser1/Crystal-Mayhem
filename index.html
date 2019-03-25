@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Mayhem</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <h1 class="display-4 text-center">Crystal Mayhem</h1>
+                      <div class="row lead scoreboard text-center">
+                          <div class="col">
+                            <p>Wins</p><span id="win-count"></span>
+                          </div>
+                          <div class="col">
+                            <p>Losses</p><span id="loss-count"></span>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+<!--       <div class="d-flex align-items-center">      --> 
+        <div class="row"> <!-- d-flex flex-row justify-content-center align-items-center -->
+            <div class="col">
+                <div class="row h-50 mx-auto" style="background-color: aqua"> <!-- Change height at this level to adjust positions. -->
+                    <div class="col d-flex h-75 my-auto" style="background-color: purple">
+                        <!-- Target Number -->
+                        <div class="card text-center my-auto mx-auto w-75">
+                            <div class="card-body">
+                                <h5 class="card-title">Target Number</h5>
+                                <p class="card-text"><span id="number-to-guess"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex h-75 my-auto" style="background-color: blue">
+                       <!-- Your Number -->
+                        <div class="card text-center my-auto mx-auto w-75">
+                            <div class="card-body">
+                                <h5 class="card-title">Your Number</h5>
+                                <p class="card-text"><span id="your-number-total"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex" style="background-color: blueviolet">
+                   
+                         <!-- Four Crystals -->
+                        <button id="crystal-1" class="col btn p-2" value="1">
+                            <img src="assets/images/amethyst.png" alt="Purple Amethyst Crystal">
+                        </button>
+                        <button id="crystal-2" class="col btn p-2" value="2">
+                            <img src="assets/images/citrine.png" alt="Orange-Yellow Citrine Crystal">
+                        </button>
+                        <button id="crystal-3" class="col btn p-2" value="3">
+                            <img src="assets/images/emerald.png" alt="Green Emerald Crystal">
+                        </button>
+                        <button id="crystal-4" class="col btn p-2" value="4">
+                            <img src="assets/images/ice.png" alt="Clear White Crystals">
+                        </button>
+                   
+                </div>
+            </div>
+            <div class="col h-100 d-flex" style="background-color: palevioletred">
+                 <!-- Instructions -->
+                 <div class="card text-center my-auto mx-auto w-75">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Instructions</h5>
+                          <p class="card-text">Each of the crystals to the left has an assigned munber of points.
+                              Click on the crystals to gather points. You win the game by exatly matchcing the target number.
+                              But beware! you lose the game if your number goes over the target. Click on a crystal to find out 
+                              how many points it's worth. The target number and the points assigned by each crystal will change 
+                              for each game. 
+                          </p>
+                        </div>
+                        <div class="card-footer text-muted">
+                        </div>
+                    </div>
+            </div>
+        </div>
+<!--         </div>        -->
+    </div> <!-- end container-fluid -->
+   
+
+    
+</body>
+</html>
