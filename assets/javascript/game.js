@@ -29,8 +29,7 @@ $(document).ready(function crystalMayhem() {
     $("#crystal-3").val(crystal[2]);
     $("#crystal-4").val(crystal[3]);
 
-
-
+    
     // FUNCTIONS //
 
     function resetGame(){
@@ -57,7 +56,7 @@ $(document).ready(function crystalMayhem() {
 
 
     $(".btn").on("click", function() {
-console.log ($(this).val());
+        console.log ($(this).val());
         var input = $(this).val();
         input = parseInt(input);
         counter += input;
@@ -67,11 +66,25 @@ console.log (counter);
         // this adds an attribute to an element: elementName.attr("data-crystalvalue", numberOptions[i]);
         if (counter > targetNumber) {
             losses++;
+            var $loss = $(".loss");
+      
+            $loss.animate({right: '+=25px', fontSize: "1.5em"}, "fast"); //height: '+=50px', width: '+=50px',
+            $loss.animate({down: '25px'}, "slow");
+            $loss.animate({right: '-=25px',  fontSize: "1em"}, "fast"); //height: '-=50px', width: '-=50px',
+            $loss.animate({up: '25px'}, "fast");
+         
             $("#loss-count").text(losses);
             resetGame();
         }
         if (counter === targetNumber) {
             wins++;
+            var $win = $(".win");
+// This doesn't move right.
+            $win.animate({left: '+=25px', height: '+=50px', width: '+=50px', fontSize: "1.5em"}, "fast");
+            $win.animate({down: '+=25px'}, "slow");
+            $win.animate({left: '-=25px', height: '-=50px', width: '-=50px', fontSize: "1em"}, "fast");
+            $win.animate({up: '+=25px'}, "fast");
+
             $("#win-count").text(wins);
             resetGame();
         }

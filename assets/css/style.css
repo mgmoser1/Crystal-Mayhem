@@ -9,3 +9,17 @@ button {
 img {
     height: auto;
 }
+
+.loss, .win {
+ position: relative;
+ /*position: absolute;*/
+}
+
+.scoreboard {
+
+    height: 50px;
+}
+
+.title-box {
+   height: -150px;
+}
