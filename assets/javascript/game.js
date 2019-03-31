@@ -12,13 +12,16 @@ $(document).ready(function crystalMayhem() {
 
     var targetNumber = Math.floor(Math.random() * 102) + 19; // Works
     var counter = 0;
+    console.log (counter);
     var wins = 0;
     var losses = 0;
     var crystal = [];
     crystal = randomCrystal(4,crystal); // Works
 
+
     $("#number-to-guess").text(targetNumber);
-    $("#your-number-total").val(counter);
+    $("#your-number-total").empty();
+    $("#your-number-total").text(counter);
     $("#win-count").text(wins);
     $("#loss-count").text(losses);
     $("#crystal-1").val(crystal[0]);
@@ -34,8 +37,9 @@ $(document).ready(function crystalMayhem() {
     crystal = randomCrystal(4,crystal);
     targetNumber = Math.floor(Math.random() * 102) + 19;
     counter = 0;
+    //  Crystal.attr("data-crystalvalue", numberOptions[i]);
     $("#number-to-guess").text(targetNumber);
-    $("#your-number-total").val(counter);
+    $("#your-number-total").empty();
     $("#crystal-1").val(crystal[0]);
     $("#crystal-2").val(crystal[1]);
     $("#crystal-3").val(crystal[2]);
@@ -57,15 +61,16 @@ $(document).ready(function crystalMayhem() {
         input = parseInt(input);
         counter += input;
 console.log (counter);
-        $("#your-number-total").val(counter);  // add attribute
+        $("#your-number-total").empty();
+        $("#your-number-total").text(counter);  // add attribute
         // this adds an attribute to an element: elementName.attr("data-crystalvalue", numberOptions[i]);
         if (counter > targetNumber) {
             losses++;
             var $loss = $(".loss");
       
-            $loss.animate({right: '+=25px', fontSize: "1.5em"}, "fast");
+            $loss.animate({right: '+=25px', fontSize: "1.5em"}, "fast"); //height: '+=50px', width: '+=50px',
             $loss.animate({down: '25px'}, "slow");
-            $loss.animate({right: '-=25px',  fontSize: "1em"}, "fast");
+            $loss.animate({right: '-=25px',  fontSize: "1em"}, "fast"); //height: '-=50px', width: '-=50px',
             $loss.animate({up: '25px'}, "fast");
          
             $("#loss-count").text(losses);
@@ -74,7 +79,7 @@ console.log (counter);
         if (counter === targetNumber) {
             wins++;
             var $win = $(".win");
-
+// This doesn't move right.
             $win.animate({left: '+=25px', height: '+=50px', width: '+=50px', fontSize: "1.5em"}, "fast");
             $win.animate({down: '+=25px'}, "slow");
             $win.animate({left: '-=25px', height: '-=50px', width: '-=50px', fontSize: "1em"}, "fast");
@@ -88,7 +93,8 @@ console.log (counter);
 
 
     $("#number-to-guess").text(targetNumber);
-    $("#your-number-total").val(counter);
+    $("#your-number-total").empty();
+    $("#your-number-total").text(counter);
     $("#win-count").text(wins);
     $("#loss-count").text(losses);
 
